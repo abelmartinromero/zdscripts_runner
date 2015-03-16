@@ -1,0 +1,15 @@
+<% @page_title = "Login" -%>
+<div class="container">
+<div class= "Sign_Form">
+	
+  <%= form_tag({:action => 'login_attempt'}, class: "form-signin", role: "form") do %>
+  <% if flash[:notice] %>
+  <div class="alert alert-danger"><%= flash[:notice] %></div>
+  <% end %>
+  <h2 class="form-signin-heading">Authenticate yourself!</h2>
+    <%= text_field_tag "username_or_email" ,nil, placeholder: "Username or Email ", class:"form-control" %>
+    <%= password_field_tag "login_password" ,nil, placeholder: "Password", class:"form-control" %>
+    <%= button_tag "Login", class:"btn btn-lg btn-primary btn-block" %>
+  <% end %>
+</div>
+</div>

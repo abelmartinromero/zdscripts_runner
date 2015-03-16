@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ZdscriptsRunner</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Zendesk script runner. Run scripts easily!">
+	<meta name="author" content="abmartinr@gmail.com">
+
+
+	<title>ZD Scripts Runner | <%= @page_title %></title>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
 </head>
+
 <body>
-
-<%= yield %>
-
+	<% if logged_in? -%>
+		<%= render :partial => 'layouts/menu' %>
+	<% end -%>
+	<div class="container">
+		<%= yield %>
+	</div>
 </body>
 </html>

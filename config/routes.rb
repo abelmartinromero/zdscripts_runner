@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
+root :to => "auth#login"
+get "login", :to => "auth#login"
+post "login", :to => "auth#login_attempt"
+get "logout", :to => "auth#logout"
+get "home", :to =>"pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,4 +59,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
 end
