@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_filter :authenticate_user
 	helper_method :logged_in?
+	
 
 	protected 
 	def authenticate_user
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
 	end
 	def save_login_state
 		if session[:user_id]
-			redirect_to(:controller => 'auth', :action => 'home')
+			redirect_to(:controller => 'pages', :action => 'home')
 			return false
 		else
 			return true

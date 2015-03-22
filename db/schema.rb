@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317002057) do
+ActiveRecord::Schema.define(version: 20150322211921) do
+
+  create_table "api_tokens", force: true do |t|
+    t.string   "subdomain"
+    t.string   "token"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oauth_clients", force: true do |t|
     t.string   "token"

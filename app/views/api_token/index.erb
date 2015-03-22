@@ -1,0 +1,18 @@
+<div class="col-sm-9 col-md-9">
+	<table class="table">
+		<thead>
+			<th>Subdomain</th>
+			<th>email</th>
+			<th>Token</th>
+		</thead>
+		<% @clients.each do |client| %>
+			<tr><%= client.subdomain %></tr>
+			<tr><%= client.email %></tr>
+			<tr><%= client.token %></tr>
+			<tr><%= link_to "edit" %></tr>
+			<tr><%= link_to "delete" %></tr>
+			<tr></tr>
+		<% end %>
+	</table>
+	<%= link_to 'Add Token', {:action => :new}, :class => 'btn' %>
+</div>
