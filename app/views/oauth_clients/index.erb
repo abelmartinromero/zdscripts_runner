@@ -1,0 +1,13 @@
+<div class="col-sm-9 col-md-9">
+	<table class="table">
+		<thead>
+			<th>Subdomain</th>
+			<th>Unlink</th>
+		</thead>
+		<% @oauthclients.each do |client| %>
+			<tr><%= client.subdomain %></tr>
+			<tr><button class="btn">X</button></tr>
+		<% end %>
+	</table>
+	<%= link_to 'Add Website', {:action => :new}, :class => 'btn' %>
+</div>

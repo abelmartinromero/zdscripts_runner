@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+# resources :oauth_clients, :path => "oauth"
+
 root :to => "auth#login"
 get "login", :to => "auth#login"
 post "login", :to => "auth#login_attempt"
